@@ -71,8 +71,8 @@ export default class Contact extends React.PureComponent {
 					Send
 				</button>
 
-				{this.state.emailSent === true && <p className="d-inline success-msg">Email Sent</p>}
-				{this.state.emailSent === false && <p className="d-inline err-msg">Email Not Sent</p>}
+				{this.state.emailSent === true && <p className="color-green mt-10">Email Sent !!</p>}
+				{this.state.emailSent === false && <p className="color-red mt-10">Email Not Sent</p>}
 			</div>
 		</div>
 	</div>)
