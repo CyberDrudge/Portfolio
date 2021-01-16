@@ -1,0 +1,21 @@
+.section-contact {
+	text-align: center;
+}
+.contact-form {
+	width: 40%;
+	margin: 40px auto 0 auto;
+	min-width: 500px;
+}
+.contact-field {
+	padding: 10px 15px;
+	margin-bottom: 3px;
+}
+.contact-send {
+	margin: 5px 0 0 0;
+	padding: 10px 30px !important;
+	border: 2px solid #fff !important;
+}
+.contact-send:hover {
+	border-color: rgb(51, 162, 255) !important;
+	background-color: rgb(51, 162, 255) !important;
+}

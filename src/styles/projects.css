@@ -1,0 +1,51 @@
+.project-types {
+	display: flex;
+	justify-content: space-between;
+	width: 60%;
+	margin: 0 auto 2rem;
+	padding-left: 0;
+}
+
+.project-type {
+	cursor: pointer;
+}
+
+.project-info {
+	width: 85%;
+	margin: 3rem auto 0;
+	padding-bottom: 3rem;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.project-card {
+	background-color: #111418;
+	border-radius: 5px;
+	width: 45%;
+	margin: 1rem;
+	padding: 3rem;
+	min-height: 12rem;
+}
+
+.project-head {
+	color: rgb(232, 230, 227);
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+
+.project-date {
+    color: rgb(162, 154, 142);
+    font-size: .8rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-desc {
+    margin-bottom: 1.2rem;
+    min-height: 7rem;
+}
+
+.active-project-type {
+	color: rgb(51, 162, 255);
+	border-bottom: 3px solid;
+	border-bottom-color: rgb(0, 86, 179);
+}

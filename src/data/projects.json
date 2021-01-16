@@ -1,0 +1,25 @@
+{
+	"Using Python" : [{
+		"title": "E-Commerce WebApp",
+		"description": "An online shopping platform made using Django.",
+		"live_link": "https://ecomfr.herokuapp.com/",
+		"github_link": "https://github.com/CyberDrudge/ECom"
+	},{
+		"title": "BSE Stock Analyzer",
+		"description": "A web application which analyze BSE equity prices for past day and displays top performing stocks. Made using CherryPy and RedisDB.",
+		"live_link": "",
+		"github_link": "https://github.com/CyberDrudge/BSE-Stock-Analyzer"
+	}],
+	"CLI App" : [{
+		"title": "EZEvents",
+		"description": "A Command Line Interface for Google Calendar. Assists in tracking and managing your Google Calendar from terminal.",
+		"live_link": "https://pypi.org/project/ezevents",
+		"github_link": "https://github.com/CyberDrudge/EZEvents"
+	}],
+	"Using ReactJS" : [{
+		"title": "E-Commerce Webapp Frontend",
+		"description": "Frontend for an e-commerce web application made using ReactJS.",
+		"live_link": "https://ecomfr.herokuapp.com/",
+		"github_link": "https://github.com/CyberDrudge/Ecom-React"
+	}]
+}
