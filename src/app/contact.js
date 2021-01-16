@@ -17,46 +17,33 @@ export default class Contact extends React.PureComponent {
 		const target = event.target;
 		const value = target.value;
 		const name = target.name;
-		this.setState({
-			[name]: value
-		})
+		this.setState({[name]: value})
 	}
 
 	handleSubmit = (event) => {
 		const {name, email, message} = this.state
-		// event.preventDefault();
-		this.setState({
-			disabled: true
-		});
-
-		// const {
-		// 	REACT_APP_EMAILJS_RECEIVER: receiverEmail,
-		// 	REACT_APP_EMAILJS_TEMPLATEID: templateId,
-		// 	REACT_APP_EMAILJS_USERID: user,
-		// } = env
-
+		this.setState({disabled: true})
 		let templateParams = {
 			from_name: name,
 			from_email: email,
 			message: message,
 		}
-
-		this.sendFeedback(
-			"portfolio_contact",
-			templateParams,
-			"user_0FwOefG7J7jnHN0Pm3Vt2",
-		)
+		this.sendFeedback(templateParams)
 	}
 
-	sendFeedback = (templateId, templateParams, user) => {
-		emailjs.send("service_mail", templateId, templateParams, user)
+	sendFeedback = (templateParams) => {
+		const {
+			REACT_APP_EMAILJS_SERVICE_ID, REACT_APP_EMAILJS_TEMPLATE_ID, REACT_APP_EMAILJS_USER_ID
+		} = process.env
+		emailjs.send(REACT_APP_EMAILJS_SERVICE_ID, REACT_APP_EMAILJS_TEMPLATE_ID, templateParams, REACT_APP_EMAILJS_USER_ID)
 		.then(res => {
 			if (res.status === 200) {
-				console.log("Successfully Sent")
-				console.log(res)
+				this.setState({name: '', email: '', message: '', emailSent: true, disabled: false})
 			}
 		})
-		.catch(err => console.error("Failed to send feedback. Error: ", err))
+		.catch(err => {
+			this.setState({emailSent: false, disabled: false})
+		})
 	}
 
 	render() {
@@ -74,15 +61,12 @@ export default class Contact extends React.PureComponent {
 				<div>
 					<input className="form-control contact-field" id="full-name" name="name" type="text" placeholder="Name" value={this.state.name} onChange={this.handleChange} />
 				</div>
-
 				<div>
 					<input className="form-control contact-field" id="email" name="email" type="email" placeholder="Email" value={this.state.email} onChange={this.handleChange} />
 				</div>
-
 				<div>
 					<textarea className="form-control contact-field" id="message" name="message" type="textarea" rows="3" placeholder="Message" value={this.state.message} onChange={this.handleChange} />
 				</div>
-
 				<button className="btn contact-send" disabled={this.state.disabled} onClick={this.handleSubmit}>
 					Send
 				</button>
